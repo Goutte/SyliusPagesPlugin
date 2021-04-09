@@ -1,0 +1,71 @@
+sylius_resource:
+  resources:
+    aropixel.page:
+      driver: doctrine/orm
+      classes:
+        model: Aropixel\SyliusPagesPlugin\Entity\Page
+        form: Aropixel\SyliusPagesPlugin\Form\Type\PageType
+
+    aropixel.page_category:
+      driver: doctrine/orm
+      classes:
+        model: Aropixel\SyliusPagesPlugin\Entity\PageCategory
+
+    aropixel.page_image:
+      driver: doctrine/orm
+      classes:
+        model: Aropixel\SyliusPagesPlugin\Entity\PageImage
+        form: Aropixel\SyliusPagesPlugin\Form\Type\PageImageType
+
+sylius_grid:
+  grids:
+    aropixel_admin_page:
+      driver:
+        name: doctrine/orm
+        options:
+          class: Aropixel\SyliusPagesPlugin\Entity\Page
+      fields:
+        title:
+          type: string
+          label: aropixel.ui.page.title
+        category.title:
+          type: string
+          label: aropixel.ui.page_category.title
+        enabled:
+          type: twig
+          label: sylius.ui.enabled
+          options:
+            template: "@SyliusUi/Grid/Field/enabled.html.twig"
+      actions:
+        main:
+          create:
+            type: create
+        item:
+          update:
+            type: update
+          delete:
+            type: delete
+
+    aropixel_admin_page_category:
+      driver:
+        name: doctrine/orm
+        options:
+          class: Aropixel\SyliusPagesPlugin\Entity\PageCategory
+      fields:
+        title:
+          type: string
+          label: aropixel.ui.page_category.title
+        enabled:
+          type: twig
+          label: sylius.ui.enabled
+          options:
+            template: "@SyliusUi/Grid/Field/enabled.html.twig"
+      actions:
+        main:
+          create:
+            type: create
+        item:
+          update:
+            type: update
+          delete:
+            type: delete

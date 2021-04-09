@@ -2,7 +2,36 @@
 
 <container xmlns="http://symfony.com/schema/dic/services" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
     <services>
-        <service id="Acme\SyliusExamplePlugin\Controller\GreetingController" autowire="true" autoconfigure="true" public="true" />
-        <!-- Put your services here -->
+
+        <service id="aropixel.listener.admin.menu_builder" class="Aropixel\SyliusPagesPlugin\Menu\AdminMenuListener">
+            <tag name="kernel.event_listener" event="sylius.menu.admin.main" method="addAdminMenuItems"/>
+        </service>
+
+        <service id="aropixel_sylius_pages_plugin.repository.page" class="Aropixel\SyliusPagesPlugin\Repository\PageRepository">
+            <argument type="service" id="doctrine"/>
+            <argument>%aropixel.model.page.class%</argument>
+        </service>
+
+        <service id="aropixel_sylius_pages_plugin.repository.category_page" class="Aropixel\SyliusPagesPlugin\Repository\PageCategoryRepository">
+            <argument type="service" id="doctrine"/>
+            <argument>%aropixel.model.page_category.class%</argument>
+        </service>
+
+
+        <service id="aropixel_sylius_pages_plugin.form.type.page" class="Aropixel\SyliusPagesPlugin\Form\Type\PageType">
+            <argument>%aropixel.model.page.class%</argument>
+            <tag name="form.type" />
+        </service>
+
+        <service id="aropixel_sylius_pages_plugin.form.type.page_image" class="Aropixel\SyliusPagesPlugin\Form\Type\PageImageType">
+            <argument>%aropixel.model.page_image.class%</argument>
+            <tag name="form.type" />
+        </service>
+
+        <service id="aropixel_sylius_pages_plugin.listener.images_upload" class="Sylius\Bundle\CoreBundle\EventListener\ImagesUploadListener" autoconfigure="true" autowire="true" public="false" parent="sylius.listener.images_upload">
+            <tag name="kernel.event_listener" event="aropixel.page.pre_create" method="uploadImages"/>
+            <tag name="kernel.event_listener" event="aropixel.page.pre_update" method="uploadImages"/>
+        </service>
+
     </services>
 </container>

@@ -1,0 +1,29 @@
+aropixel_admin_page:
+  resource: |
+    alias: aropixel.page
+    section: admin
+    path: pages
+    templates: "@SyliusAdmin\\Crud"
+    redirect: update
+    grid: aropixel_admin_page
+    vars:
+        all:
+            subheader: aropixel.ui.page
+        index:
+            icon: 'file alternate'
+  type: sylius.resource
+
+aropixel_admin_page_category:
+  resource: |
+    alias: aropixel.page_category
+    section: admin
+    path: categories
+    templates: "@SyliusAdmin\\Crud"
+    redirect: update
+    grid: aropixel_admin_page_category
+    vars:
+        all:
+            subheader: aropixel.ui.category
+        index:
+            icon: 'tags'
+  type: sylius.resource

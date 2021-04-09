@@ -1,0 +1,13 @@
+aropixel:
+  ui:
+    page.title: Titre
+    page: Page
+    pages: Pages
+    new_page: Nouvelle Page
+    edit_page: Modifier la page
+
+    page_category.title: Titre
+    category: Categorie
+    page_categories: Catégories
+    new_page_category: Nouvelle catégorie
+    edit_page_category: Modifier la catégorie

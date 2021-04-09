@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping"
+                  xmlns:gedmo="http://gediminasm.org/schemas/orm/doctrine-extensions-mapping">
+
+    <mapped-superclass name="Aropixel\SyliusPagesPlugin\Entity\PageCategory" table="aropixel_page_category">
+
+        <id name="id" column="id" type="integer">
+            <generator strategy="AUTO" />
+        </id>
+
+        <field name="title" length="255" type="string"/>
+
+        <field name="enabled" type="boolean" nullable="true" />
+
+        <one-to-many field="pages" target-entity="Aropixel\SyliusPagesPlugin\Entity\Page" mapped-by="category"/>
+
+        <field name="createdAt" type="datetime" >
+            <gedmo:timestampable on="create"/>
+        </field>
+
+    </mapped-superclass>
+
+</doctrine-mapping>
