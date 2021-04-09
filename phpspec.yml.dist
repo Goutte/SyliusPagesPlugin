@@ -1,0 +1,4 @@
+suites:
+    main:
+        namespace: Aropixel\SyliusPagesPlugin
+        psr4_prefix: Aropixel\SyliusPagesPlugin
