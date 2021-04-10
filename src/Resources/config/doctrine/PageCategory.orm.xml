@@ -9,6 +9,12 @@
             <generator strategy="AUTO" />
         </id>
 
+        <field name="code" type="string" nullable="true"/>
+
+        <field name="slug" length="255" type="string" unique="true">
+            <gedmo:slug unique="true" updatable="true" fields="title" />
+        </field>
+
         <field name="title" length="255" type="string"/>
 
         <field name="enabled" type="boolean" nullable="true" />

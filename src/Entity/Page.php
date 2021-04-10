@@ -7,10 +7,14 @@ use Doctrine\Common\Collections\Collection;
 use Sylius\Component\Core\Model\ImageInterface;
 use Sylius\Component\Core\Model\ImagesAwareInterface;
 use Sylius\Component\Resource\Model\ResourceInterface;
+use Sylius\Component\Resource\Model\CodeAwareInterface;
 
-class Page implements ImagesAwareInterface, ResourceInterface, PageInterface
+
+class Page implements ImagesAwareInterface, ResourceInterface, PageInterface, CodeAwareInterface
 {
     private $id;
+
+    private $code;
 
     private $title;
 
@@ -167,6 +171,22 @@ class Page implements ImagesAwareInterface, ResourceInterface, PageInterface
     public function setEnabled($enabled): void
     {
         $this->enabled = $enabled;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCode(): ?string
+    {
+        return $this->code;
+    }
+
+    /**
+     * @param mixed $code
+     */
+    public function setCode(?string $code): void
+    {
+        $this->code = $code;
     }
 
 }

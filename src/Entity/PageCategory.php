@@ -6,13 +6,18 @@ use  Aropixel\SyliusPagesPlugin\Repository\PageCategoryRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Sylius\Component\Resource\Model\CodeAwareInterface;
 use Sylius\Component\Resource\Model\ResourceInterface;
 
-class PageCategory implements PageCategoryInterface, ResourceInterface
+class PageCategory implements PageCategoryInterface, ResourceInterface, CodeAwareInterface
 {
     private $id;
 
+    private $code;
+
     private $title;
+
+    private $slug;
 
     private $pages;
 
@@ -103,4 +108,37 @@ class PageCategory implements PageCategoryInterface, ResourceInterface
     {
         $this->enabled = $enabled;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getCode(): ?string
+    {
+        return $this->code;
+    }
+
+    /**
+     * @param mixed $code
+     */
+    public function setCode(?string $code): void
+    {
+        $this->code = $code;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getSlug()
+    {
+        return $this->slug;
+    }
+
+    /**
+     * @param mixed $slug
+     */
+    public function setSlug($slug): void
+    {
+        $this->slug = $slug;
+    }
+
 }

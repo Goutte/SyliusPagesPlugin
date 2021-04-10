@@ -22,6 +22,10 @@ class PageType extends AbstractResourceType
                 'label' => 'Titre'
             ])
 
+            ->add('code', TextType::class, [
+                'label' => 'Code'
+            ])
+
             ->add('slug', TextType::class, [
                 'label' => 'Slug'
             ])

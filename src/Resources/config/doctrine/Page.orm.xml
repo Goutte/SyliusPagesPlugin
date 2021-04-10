@@ -11,11 +11,15 @@
 
         <field name="title" length="255" type="string"/>
 
+        <field name="code" type="string" nullable="true"/>
+
         <field name="content" type="text"/>
 
         <field name="enabled" type="boolean" nullable="true" />
 
-        <field name="slug" length="255" type="string"/>
+        <field name="slug" length="255" type="string" unique="true">
+            <gedmo:slug unique="true" updatable="true" fields="title" />
+        </field>
 
         <many-to-one field="category" target-entity="Aropixel\SyliusPagesPlugin\Entity\PageCategory" inversed-by="pages" />
 
