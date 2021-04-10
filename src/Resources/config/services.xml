@@ -33,5 +33,14 @@
             <tag name="kernel.event_listener" event="aropixel.page.pre_update" method="uploadImages"/>
         </service>
 
+
+        <service id="aropixel_sylius_pages_plugin.controller.page" class="Aropixel\SyliusPagesPlugin\Controller\PageController" public="true">
+            <call method="setContainer">
+                <argument type="service" id="Psr\Container\ContainerInterface"/>
+            </call>
+            <tag name="container.service_subscriber"/>
+            <argument type="service" id="aropixel_sylius_pages_plugin.repository.page" />
+        </service>
+
     </services>
 </container>

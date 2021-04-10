@@ -27,3 +27,8 @@ aropixel_admin_page_category:
         index:
             icon: 'tags'
   type: sylius.resource
+
+aropixel_page_plugin_show_page:
+  controller: aropixel_sylius_pages_plugin.controller.page:showPage
+  path: /{categorySlug}/{pageSlug}
+  methods: GET

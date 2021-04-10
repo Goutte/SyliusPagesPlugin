@@ -13,11 +13,11 @@ use Doctrine\Persistence\ManagerRegistry;
  * @method Page[]    findAll()
  * @method Page[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class PageRepository extends ServiceEntityRepository
+class PageRepository extends ServiceEntityRepository implements PageRepositoryInterface
 {
     public function __construct(
         ManagerRegistry $registry,
-        PageInterface $pageEntityClass
+        $pageEntityClass
     )
     {
         parent::__construct($registry, $pageEntityClass);
