@@ -29,7 +29,7 @@
             </cascade>
         </one-to-many>
 
-        <field name="createdAt" type="datetime" >
+        <field name="createdAt" type="datetime" column="created_at">
             <gedmo:timestampable on="create"/>
         </field>
 

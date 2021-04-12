@@ -21,7 +21,7 @@
 
         <one-to-many field="pages" target-entity="Aropixel\SyliusPagesPlugin\Entity\Page" mapped-by="category"/>
 
-        <field name="createdAt" type="datetime" >
+        <field name="createdAt" type="datetime" column="created_at">
             <gedmo:timestampable on="create"/>
         </field>
 
