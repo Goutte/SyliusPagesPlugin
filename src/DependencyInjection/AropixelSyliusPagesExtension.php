@@ -11,7 +11,7 @@ use Symfony\Component\DependencyInjection\Extension\Extension;
 use Symfony\Component\DependencyInjection\Extension\PrependExtensionInterface;
 use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
 
-final class AropixelSyliusPagesExtension extends Extension implements PrependExtensionInterface
+final class AropixelSyliusPagesExtension extends Extension
 {
     public function load(array $configs, ContainerBuilder $container): void
     {
@@ -25,23 +25,4 @@ final class AropixelSyliusPagesExtension extends Extension implements PrependExt
     {
         return new Configuration();
     }
-
-    public function prepend(ContainerBuilder $container)
-{
-    $this->loadBundlesTemplatesOverrides( $container );
-}
-
-    /**
-     * @param ContainerBuilder $container
-     */
-    private function loadBundlesTemplatesOverrides( ContainerBuilder $container ): void
-{
-    $rootBundle = dirname( __FILE__, 2 );
-
-    $container->loadFromExtension( 'twig', [
-        'paths' => [
-            $rootBundle . '/Resources/views/SyliusUiBundle' => 'SyliusUi',
-        ]
-    ] );
-}
 }

@@ -9,8 +9,11 @@ aropixel_admin_page:
     vars:
         all:
             subheader: aropixel.ui.page
+            templates:
+                form: "@AropixelSyliusPagesPlugin/Admin/Form/Crud/_form.html.twig"
         index:
             icon: 'file alternate'
+        update:
   type: sylius.resource
 
 aropixel_admin_page_category:
