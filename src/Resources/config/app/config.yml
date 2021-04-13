@@ -3,6 +3,7 @@ stof_doctrine_extensions:
   orm:
     default:
       sluggable: true
+      timestampable: true
 
 sylius_resource:
   resources:
