@@ -20,7 +20,7 @@ aropixel_admin_page_category:
   resource: |
     alias: aropixel.page_category
     section: admin
-    path: categories
+    path: pages/categories
     templates: "@SyliusAdmin\\Crud"
     redirect: update
     grid: aropixel_admin_page_category
@@ -33,5 +33,5 @@ aropixel_admin_page_category:
 
 aropixel_page_plugin_show_page:
   controller: aropixel_sylius_pages_plugin.controller.page:showPage
-  path: /{categorySlug}/{pageSlug}
+  path: /page/{categorySlug}/{pageSlug}
   methods: GET
