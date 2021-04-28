@@ -2,7 +2,7 @@ aropixel_admin_page_category:
   resource: |
     alias: aropixel.page_category
     section: admin
-    path: pages/categories
+    path: admin/pages/categories
     templates: "@SyliusAdmin\\Crud"
     redirect: update
     grid: aropixel_admin_page_category
@@ -17,7 +17,7 @@ aropixel_admin_page:
   resource: |
     alias: aropixel.page
     section: admin
-    path: pages
+    path: admin/pages
     templates: "@SyliusAdmin\\Crud"
     redirect: update
     grid: aropixel_admin_page
