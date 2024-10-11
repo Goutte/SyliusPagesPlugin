@@ -1,3 +1,13 @@
+# Pages Plugin for Sylius
+
+## Install
+
+    composer require aropixel/sylius-pages-plugin
+
+
+
+---
+
 <p align="center">
     <a href="https://sylius.com" target="_blank">
         <img src="https://demo.sylius.com/assets/shop/img/logo.png" />
