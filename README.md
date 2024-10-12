@@ -4,6 +4,19 @@
 
     composer require aropixel/sylius-pages-plugin
 
+Add the required parameters:
+
+
+
+Add the routes to your `config/routes.yaml`:
+
+```yaml
+sylius_pages:
+    resource: "@AropixelSyliusPagesPlugin/Resources/config/routes.yml"
+```
+
+
+
 
 
 ---

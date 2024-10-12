@@ -32,6 +32,6 @@ aropixel_admin_page:
   type: sylius.resource
 
 aropixel_page_plugin_show_page:
-  controller: aropixel_sylius_pages_plugin.controller.page:showPage
+  controller: aropixel_sylius_pages_plugin.controller.page::showPage
   path: /page/{categorySlug}/{pageSlug}
   methods: GET
