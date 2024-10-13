@@ -2,11 +2,19 @@
 
 ## Install
 
+First, require the plugin:
+
     composer require aropixel/sylius-pages-plugin
 
-Add the required parameters:
 
+Add the required parameters to your `config/parameters.yaml`:
 
+```yaml
+parameters:
+    aropixel.model.page.class: Aropixel\SyliusPagesPlugin\Entity\Page
+    aropixel.model.page_image.class: Aropixel\SyliusPagesPlugin\Entity\PageImage
+    aropixel.model.page_category.class: Aropixel\SyliusPagesPlugin\Entity\PageCategory
+```
 
 Add the routes to your `config/routes.yaml`:
 
@@ -15,10 +23,20 @@ sylius_pages:
     resource: "@AropixelSyliusPagesPlugin/Resources/config/routes.yml"
 ```
 
+Finally, update your schema and make a migration.
 
 
+## Trouble with CKEditor's License ?
 
+You can pay them up, or hotfix it by tagging it:
 
+    bin/console ckeditor:install --tag=4.22.1
+    bin/console assets:install
+
+---
+
+> Below is the original documentation about making a Sylius plugin.
+    
 ---
 
 <p align="center">
